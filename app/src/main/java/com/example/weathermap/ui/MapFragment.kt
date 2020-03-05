@@ -52,7 +52,7 @@ class MapFragment : Fragment(), GoogleMap.OnMapClickListener, OnMapReadyCallback
         Toast.makeText(activity, p0?.latitude.toString(), Toast.LENGTH_LONG).show()
     }
 
-    fun transactions() {
+    private fun transition() {
         val fm = context.supportFragmentManager
         val fragmentTransaction: FragmentTransaction
         val fragment = PopupWeatherFragment()
@@ -70,7 +70,7 @@ class MapFragment : Fragment(), GoogleMap.OnMapClickListener, OnMapReadyCallback
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(bishkek, 15f))
 
         googleMap.setOnMapClickListener {
-            transactions()
+            transition()
         }
     }
 

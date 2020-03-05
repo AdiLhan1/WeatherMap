@@ -3,6 +3,7 @@ package com.example.weathermap
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.weathermap.ui.MapFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,13 +12,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupNavigationView();
+        setSelectFragment(MapFragment())
     }
 
     private fun setupNavigationView() {
         navigation_view.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.n_map -> {
-                    setSelectFragment()
+                    setSelectFragment(MapFragment())
                     true
                 }
                 R.id.n_city_search -> {
